@@ -76,6 +76,7 @@ class Mockup {
           'Все включено',
           'Кондиционер',
         ],
+        'assetimage': 'assets/images/room.png',
       },
     ),
     RoomModel.fromMap(
@@ -87,6 +88,7 @@ class Mockup {
           'Все включено',
           'Кондиционер',
         ],
+        'assetimage': 'assets/images/room.png',
       },
     ),
     RoomModel.fromMap(
@@ -98,6 +100,7 @@ class Mockup {
           'Все включено',
           'Кондиционер',
         ],
+        'assetimage': 'assets/images/room.png',
       },
     ),
     RoomModel.fromMap(
@@ -109,6 +112,7 @@ class Mockup {
           'Все включено',
           'Кондиционер',
         ],
+        'assetimage': 'assets/images/room.png',
       },
     ),
   ];

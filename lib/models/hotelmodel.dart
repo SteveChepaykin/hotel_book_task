@@ -8,7 +8,7 @@ class HotelModel {
   late final String description;
   late final String adress;
   late final double rating;
-  late final double price; 
+  late final double price;
   late final List<String> goods;
   late final List<String> pluses;
   late final List<String> whatin;
@@ -25,16 +25,30 @@ class HotelModel {
     goods = map['goods'] != null && map['goods'] is List ? (map['goods'] as List).map((e) => e as String).toList() : throw 'NEED GOODS LIST IN HOTEL $id';
     pluses = map['pluses'] != null && map['pluses'] is List ? (map['pluses'] as List).map((e) => e as String).toList() : throw 'NEED PLUSES LIST IN HOTEL $id';
     whatin = map['whatin'] != null && map['whatin'] is List ? (map['whatin'] as List).map((e) => e as String).toList() : throw 'NEED WHAT IN LIST IN HOTEL $id';
-    whatout = map['whatout'] != null && map['whatout'] is List ? (map['whatout'] as List).map((e) => e as String).toList() : throw 'NEED WHAT OUT LIST IN HOTEL $id';
+    whatout =
+        map['whatout'] != null && map['whatout'] is List ? (map['whatout'] as List).map((e) => e as String).toList() : throw 'NEED WHAT OUT LIST IN HOTEL $id';
     rooms = map['rooms'] != null && map['rooms'] is List ? (map['rooms'] as List).map((e) => e as String).toList() : throw 'NEED ROOMS LIST IN HOTEL $id';
   }
 
-  List<RoomModel> getRooms() {
-      List<RoomModel> res = [];
-      for (String i in rooms) {
-        RoomModel rm = Mockup.rooms.firstWhere((element) => element.id == i);
-        res.add(rm);
-      }
-      return res;
+  String getWordByRating() {
+    if(rating < 2.5) {
+      return 'Удовлетворительно';
     }
+    else if(rating < 3.5) {
+      return 'Нормально';
+    } else if(rating < 4.5) {
+      return 'Хорошо';
+    } else {
+      return 'Превосходно';
+    }
+  }
+
+  List<RoomModel> getRooms() {
+    List<RoomModel> res = [];
+    for (String i in rooms) {
+      RoomModel rm = Mockup.rooms.firstWhere((element) => element.id == i);
+      res.add(rm);
+    }
+    return res;
+  }
 }

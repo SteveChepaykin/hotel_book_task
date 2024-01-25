@@ -1,6 +1,7 @@
 class RoomModel {
   final String id;
   late final String name;
+  late final String assetimage;
   late final double price;
   late final List<String> goods;
 
@@ -8,5 +9,6 @@ class RoomModel {
     name = map['name'] != null ? map['name'] as String : throw 'NEED ROOM NAME IN ROOM $id';
     price = map['price'] != null ? map['price'] as double : throw 'NEED PRICE IN ROOM $id';
     goods = map['goods'] != null && map['goods'] is List ? (map['goods'] as List).map((e) => e as String).toList() : throw 'NEED GOODS LIST IN ROOM $id';
+    assetimage = map['assetimage'] != null ? map['assetimage'] as String : throw 'NEED IMAGE LINK IN ROOM $id';
   }
 }
