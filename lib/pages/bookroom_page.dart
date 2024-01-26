@@ -130,7 +130,7 @@ class _BookRoomPageState extends State<BookRoomPage> {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(16),
                 ),
-                padding: const EdgeInsets.all(10),
+                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -209,7 +209,7 @@ class _BookRoomPageState extends State<BookRoomPage> {
       } else {
         Get.showSnackbar(
           const GetSnackBar(
-            message: 'Не все данные заполнены для оформления заказа.',
+            message: 'Для оформления заказа заполните данные о туристах.',
             duration: Duration(seconds: 2),
           ),
         );
@@ -217,7 +217,7 @@ class _BookRoomPageState extends State<BookRoomPage> {
     } else {
       Get.showSnackbar(
         const GetSnackBar(
-          message: 'Не все данные заполнены для оформления заказа.',
+          message: 'Не все данные заказчика заполнены.',
           duration: Duration(seconds: 2),
         ),
       );

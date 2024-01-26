@@ -21,6 +21,7 @@ class _TouristFormState extends State<TouristForm> {
   TextEditingController citizenshipcont = TextEditingController();
   TextEditingController interpassnumbercont = TextEditingController();
   TextEditingController interpassexpirycont = TextEditingController();
+  bool isExpanded = false;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -49,6 +50,10 @@ class _TouristFormState extends State<TouristForm> {
                   fontSize: 22,
                 ),
               ),
+              trailing: trailingArrow(),
+              onExpansionChanged: (bool expanded) {
+                setState(() => isExpanded = expanded);
+              },
               children: [
                 Input('Имя', namecont, change: (v) {
                   setState(() {
@@ -87,4 +92,13 @@ class _TouristFormState extends State<TouristForm> {
       ),
     );
   }
+
+  Widget trailingArrow() => Container(
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(4),
+      color: AppColors.blue.withOpacity(0.2)
+    ),
+    padding: const EdgeInsets.all(4),
+    child: Icon(!isExpanded ? Icons.keyboard_arrow_down_rounded : Icons.keyboard_arrow_up_rounded, size: 16,),
+  );
 }
